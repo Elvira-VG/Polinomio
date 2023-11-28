@@ -1,1 +1,15 @@
-#Introduce el grado del polinomio
+#Para evaluar el polinomio 3+2j + (4-5j)x + (1+2j)x^2 + 5jx^3 +6x^4 en 2+j
+def poli_horner (A, x):
+    p = A[-1]
+    i = len(A) - 2
+    while i >= 0:
+        p = p * x + A[i]
+        i -= 1
+    return p
+
+#Ejemplo
+A = [3+2j, 4-5j, 1+2j, 5j, 6]
+x = 2+3j
+resultado = poli_horner(A, x)
+print(resultado)
+
